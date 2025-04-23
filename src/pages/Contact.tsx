@@ -17,15 +17,15 @@ export default function Contact() {
           <div className="flex-1 space-y-5">
             <div className="flex items-center gap-3">
               <Mail className="text-primary" />
-              <a href="mailto:hello@clert.com" className="font-medium hover:underline">hello@clert.com</a>
+              <a href="mailto:t.mwangim02@gmail.com" className="font-medium hover:underline">t.mwangim02@gmail.com</a>
             </div>
             <div className="flex items-center gap-3">
               <Phone className="text-primary" />
-              <a href="tel:+11234567890" className="font-medium hover:underline">+1 (123) 456-7890</a>
+              <a href="tel:+254799028140" className="font-medium hover:underline">+254 799-028140</a>
             </div>
             <div className="flex items-center gap-3">
               <Calendar className="text-primary" />
-              <a href="https://calendly.com/" className="font-medium hover:underline" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/timmwangi" className="font-medium hover:underline" target="_blank" rel="noopener noreferrer">
                 Book a Call via Calendly
               </a>
             </div>

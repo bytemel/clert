@@ -9,33 +9,26 @@ const skills = [
   { name: "Trello", logo: "https://upload.wikimedia.org/wikipedia/en/8/8c/Trello_logo.svg", level: "Proficient" },
 ];
 
-// Duplicate the array to create seamless looping
 const duplicatedSkills = [...skills, ...skills];
 
 export function SkillLogos() {
   return (
-    <div className="relative w-full overflow-hidden py-8">
-      {/* Gradient fade effects on sides */}
+    <div className="relative w-full overflow-hidden py-12">
       <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
       <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
       
-      <div className="flex animate-infinite-scroll items-center justify-center gap-12">
+      <div className="flex animate-infinite-scroll items-center justify-center gap-16">
         {duplicatedSkills.map((skill, index) => (
-          <div 
-            key={`${skill.name}-${index}`} 
-            className="flex flex-col items-center gap-3 min-w-[120px]"
-          >
-            <div className="relative group">
+          <div key={`${skill.name}-${index}`} className="flex flex-col items-center gap-3 min-w-[140px]">
+            <div className="relative group p-2 rounded-lg bg-white/50 backdrop-blur-sm border border-gray-100 hover:border-gray-200 transition-all">
               <img 
                 src={skill.logo} 
                 alt={skill.name} 
-                className="h-14 w-14 object-contain transition-all duration-300 group-hover:scale-110" 
-                style={{ filter: "none" }} // Ensure original colors are maintained
+                className="h-16 w-16 object-contain transition-transform duration-300 group-hover:scale-105" 
               />
-              <div className="absolute inset-0 bg-white/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
             </div>
-            <span className="font-medium text-sm text-center">{skill.name}</span>
-            <span className="text-xs px-3 py-1 rounded-full bg-gray-100 text-gray-600">
+            <span className="font-medium text-sm text-gray-700">{skill.name}</span>
+            <span className="text-xs px-3 py-1 rounded-full bg-gray-50 text-gray-600 border border-gray-100">
               {skill.level}
             </span>
           </div>
@@ -44,15 +37,11 @@ export function SkillLogos() {
 
       <style jsx>{`
         @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(calc(-50% - 1.5rem));
-          }
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-50% - 2rem)); }
         }
         .animate-infinite-scroll {
-          animation: scroll 20s linear infinite;
+          animation: scroll 30s linear infinite;
           width: max-content;
         }
         .animate-infinite-scroll:hover {

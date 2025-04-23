@@ -1,37 +1,55 @@
-
 import { useState } from "react";
-import { ArrowDown, ArrowUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-const faqs = [
-  { q: "Who do you typically help?", a: "Entrepreneurs, agency owners, coaches, consultants, small teams, and ambitious founders." },
-  { q: "What tools do you use?", a: "Mostly Notion, Slack, Canva, Google Workspace, Asana, Trello — but I’m adaptable!" },
-  { q: "What about data privacy?", a: "I sign NDAs and treat your info with utmost care. Your trust matters to me." },
-  { q: "How do payments work?", a: "Monthly retainer or project-based—whichever fits. I invoice via Stripe, Wise, or bank transfer." },
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const faqs: FAQItem[] = [
+  {
+    question: "What services do you offer?",
+    answer: "We provide comprehensive virtual assistance including administrative support, calendar management, email handling, and specialized services tailored to your business needs."
+  },
+  // ... other FAQ items
 ];
 
 export function FAQAccordion() {
-  const [openIdx, setOpenIdx] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleItem = (index: number) => {
+    setOpenIndex(prevIndex => prevIndex === index ? null : index);
+  };
 
   return (
-    <div className="max-w-2xl mx-auto">
-      {faqs.map((faq, idx) => (
-        <div key={faq.q} className="mb-4 bg-clert-pastel-blue/40 rounded-xl shadow">
+    <div className="divide-y divide-gray-200">
+      {faqs.map((faq, index) => (
+        <div key={index} className="px-6 py-5">
           <button
-            className="flex justify-between items-center w-full px-6 py-5 font-semibold text-left rounded-xl hover:bg-clert-beige/30 transition"
-            onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+            className="flex w-full items-center justify-between text-left gap-4"
+            onClick={() => toggleItem(index)}
+            aria-expanded={openIndex === index}
+            aria-controls={`faq-content-${index}`}
           >
-            <span>{faq.q}</span>
-            {openIdx === idx ? <ArrowUp className="text-primary" /> : <ArrowDown className="text-primary" />}
+            <h3 className="text-lg font-medium text-gray-900 flex-1">
+              {faq.question}
+            </h3>
+            <ChevronDown
+              className={cn(
+                "h-5 w-5 text-gray-500 transition-transform duration-200 flex-shrink-0",
+                openIndex === index ? "rotate-180" : ""
+              )}
+            />
           </button>
           <div
-            className="transition-all duration-200 overflow-hidden px-6"
-            style={{
-              maxHeight: openIdx === idx ? 120 : 0,
-              opacity: openIdx === idx ? 1 : 0,
-              paddingBottom: openIdx === idx ? "18px" : "0",
-            }}
+            id={`faq-content-${index}`}
+            className={cn(
+              "overflow-hidden transition-all duration-300",
+              openIndex === index ? "mt-4" : "max-h-0"
+            )}
           >
-            {openIdx === idx && <p className="text-base text-muted-foreground">{faq.a}</p>}
+            <p className="text-gray-600 pb-2">{faq.answer}</p>
           </div>
         </div>
       ))}
