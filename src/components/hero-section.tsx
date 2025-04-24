@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import {ContactForm} from "@/components/contact-form";
 import { ArrowRight, CheckCircle, CalendarDays, ClipboardList, MessageSquareText, Zap, Clock, BarChart3 } from "lucide-react";
 
 export function HeroSection() {
@@ -11,9 +12,9 @@ export function HeroSection() {
           <div className="animate-fade-in space-y-8">
             <h1 className="text-5xl md:text-6xl lg:text-[3.75rem] font-serif font-semibold leading-tight tracking-tight">
               <span className="text-gray-900">Strategic Support for</span>{' '}
-              <span className="text-primary bg-gradient-to-r from-primary/10 to-primary/5 px-3 py-1 rounded-lg">Ambitious Businesses</span>
+              <span className="text-primary bg-clip-text from-primary/10 to-primary/5">Ambitious Businesses</span>
             </h1>
-            
+
             <p className="text-xl text-gray-600 max-w-lg leading-relaxed">
               Premium virtual assistance services designed to help visionary leaders reclaim time, reduce overhead, and scale efficiently.
             </p>
@@ -41,11 +42,17 @@ export function HeroSection() {
 
             <div className="flex flex-wrap gap-5 mt-12">
               <Button asChild size="lg" className="rounded-full pl-7 pr-6 bg-gradient-to-r from-primary to-primary-dark hover:shadow-lg transition-all">
-                <Link to="/contact" className="flex items-center gap-3 group">
+                <Link
+                  to="https://calendly.com/t-mwangim02/administrative-virtual-assistance-consultation"
+                  className="flex items-center gap-3 group"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <CalendarDays className="h-5 w-5" />
                   Schedule Consultation
                   <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
+
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full border-gray-300 hover:bg-gray-50/50 hover:border-gray-400">
                 <Link to="/services" className="flex items-center gap-3">
@@ -61,7 +68,7 @@ export function HeroSection() {
             {/* Decorative Background Elements */}
             <div className="absolute -top-16 -right-16 w-80 h-80 bg-emerald-100/40 rounded-full opacity-30 blur-[110px]"></div>
             <div className="absolute -bottom-12 -left-12 w-72 h-72 bg-amber-100/40 rounded-full opacity-30 blur-[110px]"></div>
-            
+
             {/* Main Dashboard Container */}
             <div className="relative h-full flex flex-col justify-center">
               {/* Productivity Graph - Aligned with first benefit */}
@@ -72,7 +79,7 @@ export function HeroSection() {
                 </div>
                 <div className="h-24 bg-gray-50 rounded-lg flex items-end gap-1 p-2">
                   {[20, 40, 60, 80, 65, 95, 75].map((height, index) => (
-                    <div 
+                    <div
                       key={index}
                       className="flex-1 bg-gradient-to-t from-primary to-primary/70 rounded-t-sm transition-all hover:opacity-80"
                       style={{ height: `${height}%` }}

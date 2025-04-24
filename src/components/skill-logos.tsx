@@ -3,8 +3,8 @@ import React from "react";
 const skills = [
   { name: "Notion", logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png", level: "Expert" },
   { name: "Slack", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg", level: "Expert" },
-  { name: "Google Workspace", logo: "https://upload.wikimedia.org/wikipedia/commons/d/da/Google_Workspace_Logo.svg", level: "Expert" },
-  { name: "Canva", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg", level: "Advanced" },
+  { name: "Google Workspace", logo: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Google_Workspace_Logo.svg", level: "Expert" },
+  { name: "Canva", logo: "https://upload.wikimedia.org/wikipedia/en/b/bb/Canva_Logo.svg", level: "Advanced" },
   { name: "Asana", logo: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Asana_logo.svg", level: "Advanced" },
   { name: "Trello", logo: "https://upload.wikimedia.org/wikipedia/en/8/8c/Trello_logo.svg", level: "Proficient" },
 ];

@@ -1,5 +1,4 @@
 import { Layout } from "@/components/layout";
-import { SectionHeading } from "@/components/section-heading";
 import { FAQAccordion } from "@/components/faq-accordion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -15,13 +14,16 @@ export default function FAQPage() {
         </div>
 
         <div className="container mx-auto px-4 py-24 relative z-10">
-          <SectionHeading 
-            title="Frequently Asked Questions"
-            subtitle="Find answers to common questions about our services and processes."
-            centered
-          />
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              Frequently Asked Questions
+            </h1>
+            <p className="text-xl text-gray-600">
+              Everything you need to know about our services and how we work.
+            </p>
+          </div>
           
-          <div className="mt-16 bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden max-w-4xl mx-auto">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden max-w-4xl mx-auto">
             <FAQAccordion />
           </div>
 

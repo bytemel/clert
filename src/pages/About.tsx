@@ -2,7 +2,9 @@ import { Layout } from "@/components/layout";
 import { SectionHeading } from "@/components/section-heading";
 import { Timeline } from "@/components/about-timeline";
 import { SkillLogos } from "@/components/skill-logos";
-import { Users, Briefcase, Heart, Globe, Clock, Zap } from "lucide-react";
+import { Users, Briefcase, Heart, Globe, Clock, Zap, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const valuePropositions = [
   {
@@ -26,71 +28,119 @@ export default function About() {
   return (
     <Layout>
       <div className="relative min-h-[100dvh]">
-        {/* Subtle Gradient Background */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-clert-pastel-blue/20 via-white to-clert-pastel-green/20"></div>
+        {/* Elegant Gradient Background */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-50/30 via-white to-emerald-50/30"></div>
         
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 pt-12 pb-12 md:py-24 flex flex-col gap-12 md:gap-16">
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 pt-12 pb-12 md:py-24 flex flex-col gap-16 md:gap-20">
           {/* Hero Section */}
           <section className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Your Strategic Operations Partner
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              Your Strategic <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-dark">Operations Partner</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
               Clert is a specialized remote operations team helping founders and agencies scale efficiently through expert execution and intelligent systems.
             </p>
           </section>
 
-          {/* Founder Card */}
-          <div className="mx-auto w-full max-w-3xl rounded-3xl bg-white/80 backdrop-blur-lg shadow-sm border border-gray-100 px-6 py-8 md:px-10 md:py-12 flex flex-col sm:flex-row gap-8 animate-fade-in">
-            <div className="flex-shrink-0">
-              <img 
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7" 
-                alt="Clert Team" 
-                className="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl object-cover shadow-md border-4 border-white"
-              />
+          {/* Why Choose Clert - Enhanced Section */}
+          <section className="mx-auto w-full max-w-5xl">
+            <div className="relative rounded-3xl bg-white shadow-xl border border-gray-100 overflow-hidden">
+              {/* Decorative Elements */}
+              <div className="absolute inset-0 opacity-5">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary rounded-full filter blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-40 h-40 bg-secondary rounded-full filter blur-3xl"></div>
+              </div>
+              
+              <div className="relative z-10 px-8 py-12 md:px-12 md:py-16 flex flex-col lg:flex-row gap-10">
+                <div className="flex-shrink-0">
+                  <div className="relative">
+                    <img 
+                      src="" 
+                      alt="Clert Team" 
+                      className="w-40 h-40 sm:w-48 sm:h-48 rounded-2xl object-cover shadow-lg border-4 border-white transform rotate-3"
+                    />
+                    <div className="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-md px-3 py-2 border border-gray-100">
+                      <span className="text-sm font-medium text-gray-700">7+ Years Experience</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-6">
+                  <div className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full">
+                    <span className="text-sm font-medium text-primary">Trusted Partner</span>
+                  </div>
+                  
+                  <h2 className="text-3xl font-bold text-gray-900 leading-snug">
+                    Why Leading Teams <br className="hidden md:block" />Choose Clert
+                  </h2>
+                  
+                  <p className="text-lg text-gray-600">
+                    With extensive experience supporting high-growth companies, we've perfected remote operations that drive real impact.
+                  </p>
+                  
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-4">
+                      <div className="flex-shrink-0 mt-1">
+                        <Briefcase className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Tool Specialists</h4>
+                        <p className="text-gray-600">Experts in Notion, Slack, Figma, and modern work platforms</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="flex-shrink-0 mt-1">
+                        <Globe className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Global Coverage</h4>
+                        <p className="text-gray-600">24/7 support across all timezones</p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="flex-shrink-0 mt-1">
+                        <Users className="h-5 w-5 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-gray-900">Proactive Partnership</h4>
+                        <p className="text-gray-600">We anticipate needs before they become issues</p>
+                      </div>
+                    </li>
+                  </ul>
+                  
+                  <div className="pt-2">
+                    <button className="inline-flex items-center gap-2 text-primary font-medium group">
+                      Learn more about our approach
+                      <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-gray-900">
-                Why Teams Choose Clert
-              </h3>
-              <p className="text-gray-600">
-                With 7+ years of experience supporting high-growth companies, we've refined our approach to remote operations that actually move the needle.
-              </p>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <Briefcase className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Specialized in the tools modern teams use daily: Notion, Slack, Figma, and more</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Globe className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Timezone-agnostic support for globally distributed teams</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Users className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Proactive partnership that anticipates needs before they arise</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+          </section>
 
           {/* Value Propositions */}
-          <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {valuePropositions.map((item, index) => (
-              <div key={index} className="bg-white/80 rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all">
-                <div className="flex items-center gap-3 mb-3">
+              <div 
+                key={index} 
+                className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1"
+              >
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   {item.icon}
-                  <h3 className="text-lg font-semibold">{item.title}</h3>
                 </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
               </div>
             ))}
           </section>
 
           {/* Timeline */}
-          <section className="space-y-6">
+          <section className="space-y-8">
             <SectionHeading 
               title="Our Evolution" 
               subtitle="How we grew from solo operators to a trusted collective" 
+              centered
             />
             <div className="flex justify-center">
               <Timeline />
@@ -98,25 +148,31 @@ export default function About() {
           </section>
 
           {/* Tools Section */}
-          <section className="space-y-6">
+          <section className="space-y-8">
             <SectionHeading 
               title="Our Operational Toolkit" 
               subtitle="The platforms we master to keep your business running smoothly" 
+              centered
             />
             <SkillLogos />
           </section>
 
           {/* Closing CTA */}
           <section className="text-center max-w-2xl mx-auto py-8">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-              Ready to focus on what really matters?
-            </h3>
-            <p className="text-gray-600 mb-6">
-              Let's discuss how we can streamline your operations and create space for growth.
-            </p>
-            <button className="bg-primary hover:bg-primary-dark text-white font-medium py-2 px-6 rounded-lg transition-colors">
-              Start the Conversation
-            </button>
+            <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                Ready to focus on what really matters?
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Let's discuss how we can streamline your operations and create space for growth.
+              </p>
+              <button className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-primary to-primary-dark text-white font-medium py-3 px-8 shadow-md hover:shadow-lg transition-all">
+              <Link to="/pricing" className="flex items-center gap-1">
+                <span>Get Started</span>
+            </Link>
+                <ChevronRight className="h-4 w-4 ml-2" />
+              </button>
+            </div>
           </section>
         </div>
       </div>
