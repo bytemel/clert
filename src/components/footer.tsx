@@ -103,13 +103,6 @@ export function Footer() {
                 </a>
               ))}
             </div>
-            
-            <Button className="mt-8 w-full sm:w-auto" size="lg" asChild>
-              <Link to="/contact" className="flex items-center gap-2">
-                Contact Us
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
           </div>
         </div>
 
