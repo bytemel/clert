@@ -27,15 +27,12 @@ const valuePropositions = [
 export default function About() {
   return (
     <Layout>
-      <div className="relative min-h-[100dvh]">
-        {/* Elegant Gradient Background */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-50/30 via-white to-emerald-50/30"></div>
-        
+      <div className="relative min-h-[100dvh] bg-white">
         <div className="relative z-10 container mx-auto px-4 sm:px-6 pt-12 pb-12 md:py-24 flex flex-col gap-16 md:gap-20">
           {/* Hero Section */}
           <section className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Your Strategic <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-dark">Operations Partner</span>
+              Your Strategic <span className="text-primary">Operations Partner</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
               Clert is a specialized remote operations team helping founders and agencies scale efficiently through expert execution and intelligent systems.
@@ -44,30 +41,24 @@ export default function About() {
 
           {/* Why Choose Clert - Enhanced Section */}
           <section className="mx-auto w-full max-w-5xl">
-            <div className="relative rounded-3xl bg-white shadow-xl border border-gray-100 overflow-hidden">
-              {/* Decorative Elements */}
-              <div className="absolute inset-0 opacity-5">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary rounded-full filter blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-40 h-40 bg-secondary rounded-full filter blur-3xl"></div>
-              </div>
-              
+            <div className="relative rounded-xl bg-white shadow-sm border border-gray-200 overflow-hidden">
               <div className="relative z-10 px-8 py-12 md:px-12 md:py-16 flex flex-col lg:flex-row gap-10">
                 <div className="flex-shrink-0">
                   <div className="relative">
                     <img 
                       src="" 
                       alt="Clert Team" 
-                      className="w-40 h-40 sm:w-48 sm:h-48 rounded-2xl object-cover shadow-lg border-4 border-white transform rotate-3"
+                      className="w-40 h-40 sm:w-48 sm:h-48 rounded-xl object-cover shadow-sm border-2 border-white"
                     />
-                    <div className="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-md px-3 py-2 border border-gray-100">
+                    <div className="absolute -bottom-4 -right-4 bg-white rounded-lg shadow-sm px-3 py-2 border border-gray-200">
                       <span className="text-sm font-medium text-gray-700">7+ Years Experience</span>
                     </div>
                   </div>
                 </div>
                 
                 <div className="space-y-6">
-                  <div className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full">
-                    <span className="text-sm font-medium text-primary">Trusted Partner</span>
+                  <div className="inline-flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full">
+                    <span className="text-sm font-medium text-gray-700">Trusted Partner</span>
                   </div>
                   
                   <h2 className="text-3xl font-bold text-gray-900 leading-snug">
@@ -124,9 +115,9 @@ export default function About() {
             {valuePropositions.map((item, index) => (
               <div 
                 key={index} 
-                className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all hover:-translate-y-1"
+                className="bg-white rounded-lg p-8 shadow-sm border border-gray-200 hover:shadow-md transition-all"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-gray-100 flex items-center justify-center mb-4">
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
@@ -159,19 +150,19 @@ export default function About() {
 
           {/* Closing CTA */}
           <section className="text-center max-w-2xl mx-auto py-8">
-            <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+            <div className="bg-white rounded-lg p-8 shadow-sm border border-gray-200">
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">
                 Ready to focus on what really matters?
               </h3>
               <p className="text-gray-600 mb-6">
                 Let's discuss how we can streamline your operations and create space for growth.
               </p>
-              <button className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-primary to-primary-dark text-white font-medium py-3 px-8 shadow-md hover:shadow-lg transition-all">
-              <Link to="/pricing" className="flex items-center gap-1">
-                <span>Get Started</span>
-            </Link>
-                <ChevronRight className="h-4 w-4 ml-2" />
-              </button>
+              <Button asChild>
+                <Link to="/pricing" className="flex items-center gap-1">
+                  <span>Get Started</span>
+                  <ChevronRight className="h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </section>
         </div>
