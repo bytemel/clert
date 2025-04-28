@@ -1,142 +1,118 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import {ContactForm} from "@/components/contact-form";
-import { ArrowRight, CheckCircle, CalendarDays, ClipboardList, MessageSquareText, Zap, Clock, BarChart3 } from "lucide-react";
+import { ArrowRight, CheckCircle, CalendarDays, ClipboardList, BarChart3, Zap, Clock } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="py-28 md:py-40 bg-gradient-to-b from-blue-50/20 via-white to-white">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <section className="py-16 md:py-24 lg:py-32 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content Column */}
-          <div className="animate-fade-in space-y-8">
-            <h1 className="text-5xl md:text-6xl lg:text-[3.75rem] font-serif font-semibold leading-tight tracking-tight">
-              <span className="text-gray-900">Strategic Support for</span>{' '}
-              <span className="text-primary bg-clip-text from-primary/10 to-primary/5">Ambitious Businesses</span>
+          <div className="space-y-6 md:space-y-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+              <span className="text-gray-900">Executive Support for </span>
+              <span className="text-primary">Visionary Leaders</span>
             </h1>
 
-            <p className="text-xl text-gray-600 max-w-lg leading-relaxed">
-              Premium virtual assistance services designed to help visionary leaders reclaim time, reduce overhead, and scale efficiently.
+            <p className="text-lg md:text-xl text-gray-600 max-w-lg leading-relaxed">
+              Reclaim 15+ hours weekly with a premium virtual operations partner dedicated to your growth.
             </p>
 
-            <ul className="space-y-4 mt-10">
-              <li className="flex items-start gap-4">
-                <div className="bg-emerald-50 p-1.5 rounded-full">
-                  <CheckCircle className="h-5 w-5 text-emerald-600" />
-                </div>
-                <span className="text-gray-700">Dedicated support from experienced professionals</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="bg-emerald-50 p-1.5 rounded-full">
-                  <CheckCircle className="h-5 w-5 text-emerald-600" />
-                </div>
-                <span className="text-gray-700">Flexible solutions that grow with your business</span>
-              </li>
-              <li className="flex items-start gap-4">
-                <div className="bg-emerald-50 p-1.5 rounded-full">
-                  <CheckCircle className="h-5 w-5 text-emerald-600" />
-                </div>
-                <span className="text-gray-700">Seamless integration with your workflow</span>
-              </li>
+            <ul className="space-y-4 mt-6 md:mt-8">
+              {[
+                "Dedicated executive assistants with 5+ years experience",
+                "Seamless integration with your leadership workflow",
+                "Strategic support that scales with your ambitions"
+              ].map((item, index) => (
+                <li key={index} className="flex items-start gap-4">
+                  <div className="bg-primary/10 p-1 rounded-full mt-0.5">
+                    <CheckCircle className="h-5 w-5 text-primary" />
+                  </div>
+                  <span className="text-gray-700 flex-1">{item}</span>
+                </li>
+              ))}
             </ul>
 
-            <div className="flex flex-wrap gap-5 mt-12">
-              <Button asChild size="lg" className="rounded-full pl-7 pr-6 bg-gradient-to-r from-primary to-primary-dark hover:shadow-lg transition-all">
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-10">
+              <Button asChild size="lg" className="rounded-lg pl-6 pr-5 bg-primary hover:bg-primary/90 transition-colors">
                 <Link
                   to="https://calendly.com/t-mwangim02/administrative-virtual-assistance-consultation"
-                  className="flex items-center gap-3 group"
+                  className="flex items-center gap-2 group"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <CalendarDays className="h-5 w-5" />
-                  Schedule Consultation
+                  Book Strategy Call
                   <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full border-gray-300 hover:bg-gray-50/50 hover:border-gray-400">
-                <Link to="/services" className="flex items-center gap-3">
+              <Button asChild variant="outline" size="lg" className="rounded-lg border-gray-300 hover:bg-gray-50">
+                <Link to="/services" className="flex items-center gap-2">
                   <ClipboardList className="h-5 w-5" />
-                  Explore Services
+                  Our Services
                 </Link>
               </Button>
             </div>
           </div>
 
-          {/* Visual Column - Enhanced Dashboard */}
-          <div className="relative hidden lg:block h-full min-h-[500px]">
-            {/* Decorative Background Elements */}
-            <div className="absolute -top-16 -right-16 w-80 h-80 bg-emerald-100/40 rounded-full opacity-30 blur-[110px]"></div>
-            <div className="absolute -bottom-12 -left-12 w-72 h-72 bg-amber-100/40 rounded-full opacity-30 blur-[110px]"></div>
+          {/* Visual Dashboard - Responsive & Engaging */}
+          <div className="relative h-full min-h-[400px] lg:min-h-[500px]">
+            {/* Main Dashboard Card */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative bg-white p-6 rounded-xl shadow-lg border border-gray-100 w-full max-w-md mx-auto">
+                {/* Productivity Graph */}
+                <div className="mb-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <BarChart3 className="h-5 w-5 text-primary" />
+                    <h3 className="font-medium text-gray-800">Your Weekly Efficiency</h3>
+                  </div>
+                  <div className="h-32 bg-gray-50 rounded-lg flex items-end gap-1.5 p-3">
+                    {[30, 45, 60, 75, 90, 85, 95].map((height, index) => (
+                      <div
+                        key={index}
+                        className="flex-1 bg-gradient-to-t from-primary to-primary/80 rounded-t-md hover:opacity-90 transition-opacity"
+                        style={{ height: `${height}%` }}
+                      />
+                    ))}
+                  </div>
+                </div>
 
-            {/* Main Dashboard Container */}
-            <div className="relative h-full flex flex-col justify-center">
-              {/* Productivity Graph - Aligned with first benefit */}
-              <div className="relative bg-white p-5 rounded-2xl shadow-md border border-gray-200/80 w-3/4 mb-6 ml-8">
-                <div className="flex items-center gap-3 mb-3">
-                  <BarChart3 className="h-5 w-5 text-primary" />
-                  <h3 className="font-medium text-gray-800">Weekly Productivity</h3>
+                {/* Time Saved Counter */}
+                <div className="bg-gray-50 rounded-lg p-4 flex items-center gap-4">
+                  <div className="bg-primary/10 p-2 rounded-full">
+                    <Clock className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Time saved this month</p>
+                    <p className="text-xl font-bold text-gray-900">92 hours</p>
+                  </div>
+                  <div className="ml-auto bg-white px-2 py-1 rounded-full text-xs font-medium shadow-sm border border-gray-200">
+                    +18% MoM
+                  </div>
                 </div>
-                <div className="h-24 bg-gray-50 rounded-lg flex items-end gap-1 p-2">
-                  {[20, 40, 60, 80, 65, 95, 75].map((height, index) => (
-                    <div
-                      key={index}
-                      className="flex-1 bg-gradient-to-t from-primary to-primary/70 rounded-t-sm transition-all hover:opacity-80"
-                      style={{ height: `${height}%` }}
-                    />
-                  ))}
-                </div>
-                <div className="absolute -bottom-3 -right-3 bg-white p-1.5 rounded-full shadow border border-gray-200">
+
+                {/* Decorative Elements */}
+                <div className="absolute -top-3 -right-3 bg-white p-2 rounded-full shadow border border-gray-200">
                   <Zap className="h-4 w-4 text-amber-400" />
                 </div>
               </div>
+            </div>
 
-              {/* Virtual Assistant Message - Centered */}
-              <div className="relative bg-white p-5 rounded-2xl shadow-lg border border-gray-200/80 w-4/5 mx-auto mb-6 z-10 animate-float-slow">
-                <div className="absolute -top-3 left-6 w-5 h-5 bg-white transform rotate-45 border-t border-l border-gray-200/80"></div>
-                <div className="flex items-start gap-3">
-                  <div className="bg-blue-100 p-2 rounded-full flex-shrink-0">
-                    <MessageSquareText className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-gray-800 mb-1 text-sm">Your Virtual Assistant</p>
-                    <p className="text-gray-600 text-sm">"I've organized your meetings and prioritized this week's tasks!"</p>
-                  </div>
-                </div>
-              </div>
+            {/* Floating Metrics - Responsive Positioning */}
+            <div className="hidden md:block absolute top-0 right-0 lg:right-8 bg-white p-3 rounded-lg shadow-md border border-gray-100">
+              <p className="text-2xl font-bold text-primary">+43%</p>
+              <p className="text-xs text-gray-500">Efficiency Gain</p>
+            </div>
 
-              {/* Time Saved Counter - Aligned with last benefit */}
-              <div className="relative bg-white p-5 rounded-2xl shadow-md border border-gray-200/80 w-3/4 ml-auto mr-8">
-                <div className="flex items-center gap-3">
-                  <Clock className="h-5 w-5 text-emerald-600" />
-                  <div>
-                    <p className="text-sm text-gray-500">Time saved this month</p>
-                    <p className="text-xl font-bold text-gray-800">87.5 hours</p>
-                  </div>
+            <div className="hidden md:block absolute bottom-4 left-0 lg:left-8 bg-white p-3 rounded-lg shadow-md border border-gray-100">
+              <div className="flex items-center gap-2">
+                <div className="bg-emerald-100 p-1.5 rounded-full">
+                  <CheckCircle className="h-4 w-4 text-emerald-600" />
                 </div>
-                <div className="absolute -top-2 -right-2 bg-white px-2 py-0.5 rounded-full text-xs font-medium shadow border border-gray-200">
-                  +15% from last month
+                <div>
+                  <p className="text-sm font-medium">27 Tasks</p>
+                  <p className="text-xs text-gray-500">Completed</p>
                 </div>
-              </div>
-
-              {/* Floating Badges - Positioned strategically */}
-              <div className="absolute top-8 right-8 bg-white p-3 rounded-xl shadow-md border border-gray-200/80 backdrop-blur-sm">
-                <div className="text-center">
-                  <p className="text-2xl font-bold text-primary">+43%</p>
-                  <p className="text-xs text-gray-500">Efficiency</p>
-                </div>
-              </div>
-
-              <div className="absolute bottom-8 left-8 bg-white p-3 rounded-xl shadow-md border border-gray-200/80 backdrop-blur-sm">
-                {/* <div className="flex items-center gap-2">
-                  <div className="h-8 w-8 bg-emerald-50 rounded-full flex items-center justify-center border border-emerald-100">
-                    <CheckCircle className="h-4 w-4 text-emerald-600" />
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500">Tasks completed</p>
-                    <p className="text-sm font-medium">12 today</p>
-                  </div>
-                </div> */}
               </div>
             </div>
           </div>
